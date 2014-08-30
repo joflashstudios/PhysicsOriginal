@@ -13,7 +13,8 @@ namespace Science
     {
         public VectorControl()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            this.Name = "Vectors";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace Science
                 {
                     if (C is Button && this.ParentForm != null)
                     {
-                        if (((ProgramForm)this.ParentForm).ActivePage == (string)C.Tag)
+                        if (((ProgramForm)this.ParentForm).ActivePage.Name == (string)C.Tag)
                         {
                             toChange = C;
                         }

@@ -356,7 +356,6 @@
             this.Controls.Add(this.arbitraryImage1);
             this.Name = "SettingsControl";
             this.Size = new System.Drawing.Size(428, 399);
-            this.ParentChanged += new System.EventHandler(this.SettingsControl_ParentChanged);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.foldPanel1.ResumeLayout(false);
             this.foldPanel1.PerformLayout();

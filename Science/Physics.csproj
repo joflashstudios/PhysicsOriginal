@@ -69,11 +69,11 @@
     <Compile Include="Components\FoldPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Pages\Liberty.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Components\QuadrantSelector.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Pages\Liberty.Designer.cs">
-      <DependentUpon>Liberty.cs</DependentUpon>
+    <Compile Include="Components\RightTrianglePanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Pages\SettingsControl.cs">
       <SubType>UserControl</SubType>
@@ -92,18 +92,6 @@
     </Compile>
     <Compile Include="Components\MiniNavControl.Designer.cs">
       <DependentUpon>MiniNavControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NewtonBasic.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\NewtonBasic.Designer.cs">
-      <DependentUpon>NewtonBasic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NewtonControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pages\NewtonControl.Designer.cs">
-      <DependentUpon>NewtonControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Page.cs">
       <SubType>UserControl</SubType>
@@ -144,12 +132,6 @@
     <EmbeddedResource Include="Components\AcheievementGet.resx">
       <DependentUpon>AcheievementGet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Liberty.resx">
-      <DependentUpon>Liberty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\NewtonBasic.resx">
-      <DependentUpon>NewtonBasic.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\SettingsControl.resx">
       <DependentUpon>SettingsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\MiniNavControl.resx">
       <DependentUpon>MiniNavControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\NewtonControl.resx">
-      <DependentUpon>NewtonControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramForm.resx">
       <DependentUpon>ProgramForm.cs</DependentUpon>

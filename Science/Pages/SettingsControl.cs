@@ -11,7 +11,6 @@ namespace Science
 {
     public partial class SettingsControl : Page
     {
-        private string old = "";
         public SettingsControl()
         {
             InitializeComponent();
@@ -19,7 +18,7 @@ namespace Science
 
         private void arbitraryImage4_Click(object sender, EventArgs e)
         {
-            ((ProgramForm)this.ParentForm).SwitchPage(old);
+            //BUG: this doesn't work. Need parent form to track history or something.
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -37,21 +36,6 @@ namespace Science
                 {
                     ((FoldPanel)C).Closed = true;
                     C.Refresh();
-                }
-            }
-        }
-
-        private void SettingsControl_ParentChanged(object sender, EventArgs e)
-        {
-            if (this.Parent != null)
-            {
-                if(((ProgramForm)this.ParentForm).ActivePage != null)
-                {
-                    old = ((ProgramForm)this.ParentForm).ActivePage;
-                }
-                else
-                {
-                    old = "Launcher";
                 }
             }
         }

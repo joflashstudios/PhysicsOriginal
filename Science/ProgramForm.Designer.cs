@@ -87,12 +87,13 @@
             this.Controls.Add(this.arbitraryButton2);
             this.Controls.Add(this.arbitraryButton1);
             this.Controls.Add(this.launcherControl1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProgramForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Science!";
+            this.Text = "Physics!";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProgramForm_FormClosing);
             this.Load += new System.EventHandler(this.ProgramForm_Load_1);
             this.ResumeLayout(false);

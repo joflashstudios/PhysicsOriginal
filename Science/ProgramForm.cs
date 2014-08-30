@@ -16,15 +16,13 @@ namespace Science
         public ProgramForm()
         {
             InitializeComponent();
-            launcherControl1.Active = true;
-            launcherControl1.Name = "Launcher";
 
-            Pages.Add(this.launcherControl1);
-            Pages.Add(new TrigControl() { Name = "Trig" });
-            Pages.Add(new VectorControl() { Name = "Vectors" });
-            Pages.Add(new NewtonControl() { Name = "Newton" });
-            Pages.Add(new SettingsControl() { Name = "Settings" });
-            Pages.Add(new Liberty() { Name = "Liberty" });
+            Pages.Add("Launcher", launcherControl1);
+            Pages.Add("Trig", new TrigControl());
+            Pages.Add("Vectors", new VectorControl());
+            Pages.Add("Settings", new SettingsControl());
+            ActivePage = launcherControl1;
+
             Achievement.F = this;
         }
 
@@ -37,43 +35,39 @@ namespace Science
 
         public void SwitchPage(string target)
         {
-            Page OldPage = null;
-            Page NewPage = null;
-            foreach (Page P in this.Pages)
-            {
-                if (P.Active)
-                    OldPage = P;
-                if (P.Name == target)
-                    NewPage = P;
-            }
-            DoPageSwitch(OldPage, NewPage);
-            ActivePage = NewPage.Name;
+            SwitchPage(Pages[target]);
         }
 
-        public string ActivePage { get; set; }
+        public void SwitchPage(Page target)
+        {
+            target.Visible = false;
+            this.Controls.Add(target);
+            ActivePage.Visible = false;
 
-        private void DoPageSwitch(Page OldPage, Page NewPage)
+            SwitchToSize(target.Size);
+
+            target.Visible = true;
+            this.Controls.Remove(ActivePage);
+
+            ActivePage = target;
+        }
+
+        private void SwitchToSize(Size target)
         {
             this.MaximumSize = new Size(0, 0);
             this.MinimumSize = new Size(0, 0);
-            if (OldPage != null)
-            {
-                this.Controls.Remove(OldPage);
-            }
 
-            this.Controls.Add(NewPage);
-            NewPage.Visible = false;
-
-            double Xincrement = (double)(NewPage.Width - this.Size.Width) / 30D;
-            double Yincrement = (double)(NewPage.Height - this.Size.Height) / 30D;
+            double Xincrement = (double)(target.Width - this.Size.Width) / 50D;
+            double Yincrement = (double)(target.Height - this.Size.Height) / 50D;
             double ActualX = this.ClientRectangle.Width;
             double ActualY = this.ClientRectangle.Height;
 
             double ActualTop = this.Top;
             double ActualLeft = this.Left;
-            if (OldPage != null && OldPage.Size != NewPage.Size)
+            if (ActivePage.Size != target)
             {
-                for (int i = 0; i < 30; i++)
+                DateTime lastLoop = DateTime.Now;
+                for (int i = 0; i < 50; i++)
                 {
                     ActualX += Xincrement;
                     ActualY += Yincrement;
@@ -81,30 +75,14 @@ namespace Science
                     ActualTop -= Yincrement / 2;
                     this.Left = (int)ActualLeft;
                     this.Top = (int)ActualTop;
-                    Size thing = new Size((int)ActualX, (int)ActualY);
-                    this.ClientSize = thing;
+                    this.ClientSize = new Size((int)ActualX, (int)ActualY);
                     this.Refresh();
-                    System.Threading.Thread.Sleep(3);
                 }
             }
 
-            NewPage.Visible = true;
-            NewPage.Active = true;
-            if (OldPage != null)
-            {
-                OldPage.Visible = false;
-                this.Controls.Remove(OldPage);
-                OldPage.Active = false;
-            }
-            if (NewPage.Name == "Liberty")
-            {
-                ((Liberty)NewPage).Animate();
-            }
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
         }
-
-        public List<Page> Pages = new List<Page>();
 
         private void ProgramForm_Load(object sender, EventArgs e)
         {
@@ -167,5 +145,8 @@ namespace Science
             Physics.AppSettings = new Settings();
             BigNumDec._divisionDigits = 100;
         }
+
+        public Dictionary<string, Page> Pages = new Dictionary<string, Page>();
+        public Page ActivePage { get; set; }
     }
 }

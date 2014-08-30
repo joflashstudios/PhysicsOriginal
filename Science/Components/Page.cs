@@ -14,11 +14,9 @@ namespace Science
             this.MouseDown += new MouseEventHandler(MouseDownGrab);
         }
 
-        public string Name;
-        public bool Active;
-
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
+
         [DllImport("User32.dll")]
         public static extern bool ReleaseCapture();
         [DllImport("User32.dll")]
