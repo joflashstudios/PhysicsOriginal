@@ -1,0 +1,31 @@
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.csprojResolveAssemblyReference.cache
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.Properties.Resources.resources
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.csproj.GenerateResource.Cache
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\bin\Debug\Science.exe
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\bin\Debug\Science.pdb
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\bin\Debug\W3b.Sine.dll
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.exe
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.pdb
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.Launcher.resources
+C:\Users\Elizabeth\AppData\Local\Temporary Projects\Science\obj\x86\Debug\Science.Trig.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.exe
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.pdb
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.csprojResolveAssemblyReference.cache
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.Properties.Resources.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.csproj.GenerateResource.Cache
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\bin\Debug\Science.exe
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\bin\Debug\Science.pdb
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\bin\Debug\W3b.Sine.dll
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\bin\Debug\W3b.Sine.pdb
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.TrigControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.LauncherControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.ProgramForm.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.MiniNavControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\bin\Debug\Science.exe.config
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.AcheievementGet.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.VectorControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.VectorInputControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.NewtonControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.SettingsControl.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.NewtonBasic.resources
+C:\Users\Elizabeth\documents\visual studio 2010\Projects\Science\Science\obj\x86\Debug\Science.Liberty.resources

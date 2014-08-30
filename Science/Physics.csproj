@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{409C4E7F-5C87-4F73-BC0A-3FC5B6191EEF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Science</RootNamespace>
+    <AssemblyName>Science</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>black.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="W3b.Sine, Version=0.3.3562.37398, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\0.3.5 - Sources\W3b.Sine\bin\Debug\W3b.Sine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\AcheievementGet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\AcheievementGet.Designer.cs">
+      <DependentUpon>AcheievementGet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Achievement.cs" />
+    <Compile Include="Components\ArbitraryButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ArbitraryImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FoldPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pages\Liberty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Liberty.Designer.cs">
+      <DependentUpon>Liberty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LauncherControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\LauncherControl.Designer.cs">
+      <DependentUpon>LauncherControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MiniNavControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\MiniNavControl.Designer.cs">
+      <DependentUpon>MiniNavControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewtonBasic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\NewtonBasic.Designer.cs">
+      <DependentUpon>NewtonBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\NewtonControl.Designer.cs">
+      <DependentUpon>NewtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramForm.Designer.cs">
+      <DependentUpon>ProgramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Physics.cs" />
+    <Compile Include="Pages\TrigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\TrigControl.Designer.cs">
+      <DependentUpon>TrigControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TrigProblem.cs" />
+    <Compile Include="Vector.cs" />
+    <Compile Include="Pages\VectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\VectorControl.Designer.cs">
+      <DependentUpon>VectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\VectorInputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\VectorInputControl.Designer.cs">
+      <DependentUpon>VectorInputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\VectorPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Components\AcheievementGet.resx">
+      <DependentUpon>AcheievementGet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Liberty.resx">
+      <DependentUpon>Liberty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NewtonBasic.resx">
+      <DependentUpon>NewtonBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LauncherControl.resx">
+      <DependentUpon>LauncherControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MiniNavControl.resx">
+      <DependentUpon>MiniNavControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NewtonControl.resx">
+      <DependentUpon>NewtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramForm.resx">
+      <DependentUpon>ProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Pages\TrigControl.resx">
+      <DependentUpon>TrigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\VectorControl.resx">
+      <DependentUpon>VectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\VectorInputControl.resx">
+      <DependentUpon>VectorInputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vectors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electric.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cap1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drowning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\achdef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\achdef1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="black.ico" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\x1.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
