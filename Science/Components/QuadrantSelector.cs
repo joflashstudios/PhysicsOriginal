@@ -14,6 +14,8 @@ namespace Science
         {
             ActiveQuadrant = Quadrant.First;
             BackColor = SystemColors.Control;
+
+            //These are just defaults. They can be changed via consumers and/or the Windows Forms Designer
             ActiveColor = Color.FromArgb(40, 80, 255);
             HoverColor = Color.FromArgb(80, 160, 255);
             AxisColor = Color.FromArgb(60, 60, 60);
@@ -44,18 +46,6 @@ namespace Science
             base.OnMouseEnter(e);
         }
 
-        protected override void OnMouseClick(MouseEventArgs e)
-        {
-            Point mouse = PointToClient(Control.MousePosition);
-
-            if (ClientRectangle.Contains(mouse))
-            {
-                ActiveQuadrant = GetQuadrant(mouse);
-                Invalidate();
-            }
-            base.OnMouseClick(e);
-        }
-
         protected override void OnMouseLeave(EventArgs e)
         {
             if (_MouseTracker != null)
@@ -63,13 +53,20 @@ namespace Science
                 _MouseTracker.Stop();
                 _MouseTracker.Dispose();
             }
+            _LastHover = (Quadrant)(-1);
+            Invalidate();
+        }
 
-            if (_LastHover != ActiveQuadrant)
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            Point mouse = PointToClient(Control.MousePosition);
+
+            if (ClientRectangle.Contains(mouse))
             {
-                Graphics graphics = CreateGraphics();
-                PaintQuadrant(graphics, new SolidBrush(BackColor), _LastHover);
-                graphics.Dispose();
+                ActiveQuadrant = GetQuadrant(mouse);
             }
+
+            base.OnMouseClick(e);
         }
 
         private void _MouseTracker_Tick(object sender, EventArgs e)
@@ -195,11 +192,13 @@ namespace Science
         public Quadrant ActiveQuadrant { get; set; }
     }
 
+    //1st bit - left
+    //2nd bit - bottom
     public enum Quadrant
     {
-        First,
-        Second,
-        Third,
-        Fourth
+        First = 0, //00
+        Second = 1, //01
+        Third = 3, //11
+        Fourth = 2 //10
     }
 }
