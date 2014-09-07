@@ -51,6 +51,43 @@ namespace Science
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
+            pevent.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            DrawFrame(pevent);
+
+            Point Origin = new Point(ClientRectangle.Width / 2, ClientRectangle.Height / 2);           
+            DrawAxis(pevent, Origin);
+
+            DrawVectors(pevent, Origin);
+        }
+
+        private void DrawVectors(PaintEventArgs pevent, Point Origin)
+        {
+            if (Vectors.Count > 0)
+            {
+                Vector3 Sum = new Vector3(0, 0, 0);
+                Vector3 Max = new Vector3(0, 0, 0);
+
+                var sorted = this.Vectors.OrderBy(n => n.Magnitude);
+
+                foreach (Vector3 vector in sorted)
+                {
+                    Sum = Sum + vector;
+                    Max = Vector3.Max(vector, Max); //Is the current vector greater than the max?
+                    Max = Vector3.Max(vector, Sum); //Is the sum greater than the max?
+                }
+                double xratio = ((ClientRectangle.Width - 4) / 2) / Math.Abs(Max.X);
+                double yratior = ((ClientRectangle.Height - 4) / 2) / Math.Abs(Max.Y);
+
+                double ratio = Math.Min(xratio, yratior);
+
+                Rectangle ArcRec = DrawVectorSet(pevent, Origin, sorted, ratio);
+
+                DrawSum(pevent, ref Sum, ref Origin, ratio, ref ArcRec);
+            }
+        }
+
+        private void DrawFrame(PaintEventArgs pevent)
+        {
             using (Pen p = new Pen(BorderColor))
             {
                 pevent.Graphics.FillRectangle(p.Brush, this.DisplayRectangle);
@@ -60,36 +97,6 @@ namespace Science
             {
                 Rectangle Smaller = new Rectangle(this.DisplayRectangle.X + 1, this.DisplayRectangle.Y + 1, this.DisplayRectangle.Width - 2, this.DisplayRectangle.Height - 2);
                 pevent.Graphics.FillRectangle(p.Brush, Smaller);
-            }
-
-            Vector3 Sum = new Vector3(0, 0, 0);
-
-            Vector3 Max = new Vector3(0, 0, 0);
-
-            Point Origin = new Point(ClientRectangle.Width / 2, ClientRectangle.Height / 2);           
-
-            pevent.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            DrawAxis(pevent, Origin);
-
-            if (Vectors.Count > 0)
-            {
-                var sorted = this.Vectors.OrderBy(n => n.Magnitude);
-
-                foreach (Vector3 vector in sorted)
-                {
-                    Sum = Sum + vector;
-                    Max = Vector3.Max(vector, Max);
-                    Max = Vector3.Max(vector, Sum);
-                }
-                double xratio = ((ClientRectangle.Width - 4) / 2) / Math.Abs(Max.X);
-                double yratior = ((ClientRectangle.Height - 4) / 2) / Math.Abs(Max.Y);
-
-                double ratio = Math.Min(xratio, yratior);
-
-                Rectangle ArcRec = DrawVectors(pevent, ref Origin, sorted, ratio);
-
-                DrawSum(pevent, ref Sum, ref Origin, ratio, ref ArcRec);
             }
         }
 
@@ -109,7 +116,7 @@ namespace Science
             }
         }
 
-        private static Rectangle DrawVectors(PaintEventArgs pevent, ref Point Origin, IOrderedEnumerable<Vector3> sorted, double ratio)
+        private static Rectangle DrawVectorSet(PaintEventArgs pevent, Point Origin, IOrderedEnumerable<Vector3> sorted, double ratio)
         {
             Rectangle ArcRec = new Rectangle(Origin.X - 5, Origin.Y - 5, 10, 10);
 
@@ -117,6 +124,7 @@ namespace Science
             {
                 using (Pen p = new Pen(Color.FromArgb(vector.Color), 1))
                 {
+                    //Bump up ArcRect by 5 px radius
                     ArcRec = new Rectangle(ArcRec.X - 5, ArcRec.Y - 5, ArcRec.Width + 10, ArcRec.Height + 10);
                     float sweep = (float)vector.Angle(new Vector3(1, 0, 0)) * 57.2957795F;
                     if (vector.Y < 0)

@@ -87,6 +87,7 @@
             this.Controls.Add(this.arbitraryButton2);
             this.Controls.Add(this.arbitraryButton1);
             this.Controls.Add(this.launcherControl1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

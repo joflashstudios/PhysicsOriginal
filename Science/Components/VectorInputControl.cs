@@ -28,17 +28,17 @@ namespace Science
             }
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaintBackground(e);
+            base.OnPaint(e);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             using (Pen p = new Pen(BorderColor, 0.1F))
             {
-                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 Rectangle R = new Rectangle(DisplayRectangle.X, DisplayRectangle.Y, DisplayRectangle.Width - 1, DisplayRectangle.Height - 1);
                 e.Graphics.DrawRectangle(p, R);
             }
-        }       
+        }    
 
         private double rad(double deg)
         {
